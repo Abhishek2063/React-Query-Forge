@@ -1,70 +1,109 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Query Forge
 
-## Available Scripts
+React Query Forge is a powerful package developed by Abhishek Garg that simplifies the process of building complex nested queries in React applications. Similar to a React query builder, React Query Forge excels in handling nested grouping with ease, presenting data in a tree-like structure for enhanced clarity and flexibility.
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+To install React Query Forge, simply use npm:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+npm install @abhishek2063/react-query-forge
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Usage
 
-### `npm test`
+To use React Query Forge in your project, follow these steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Import the `QueryBuilder` component from `@abhishek2063/react-query-forge`.
+2. Prepare your data and fields according to the required structure.
 
-### `npm run build`
+### Example
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```javascript
+import React, { useState } from 'react';
+import { QueryBuilder } from '@abhishek2063/react-query-forge';
+import { v4 as uuidv4 } from 'uuid';
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+function App() {
+  const [data, setData] = useState({
+    combinator: "and",
+    rules: [
+      {
+        id: "ddb960db-e4c0-4664-aa39-16a32aa4599e",
+        field: "",
+        operator: '',
+        value: '',
+        formula: "",
+        type: ""
+      },
+      {
+        id: "ddb960db-e4c0-4664-aa39-16a32aa4599b",
+        combinator: "and",
+        rules: []
+      }
+    ]
+  });
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  const [fields] = useState([
+    {
+      id: uuidv4(),
+      type: "status",
+      value: "value 1",
+      name: "Value 1",
+      formula: ""
+    },
+    {
+      id: uuidv4(),
+      type: "status",
+      value: "value 2",
+      name: "Value 2",
+      formula: ""
+    },
+    {
+      id: uuidv4(),
+      type: "status",
+      value: "value 3",
+      name: "Value 3",
+      formula: ""
+    }
+  ]);
 
-### `npm run eject`
+  return (
+    <div>
+      <h1>React Query Forge Example</h1>
+      <QueryBuilder
+        state={data}
+        setState={setData}
+        allowedRemoveForge={true}
+        allowedDuplicateForge={true}
+        allowedAddNewForge={true}
+        allowedAddGroupForge={true}
+        allowedRemoveGroupForge={true}
+        fields={fields}
+      />
+    </div>
+  );
+}
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+export default App;
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Features
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Nested Grouping:** Easily create complex nested queries with intuitive tree-like structures.
+- **Flexible Configuration:** Customize query builder behavior with various configuration options.
+- **Simple Integration:** Seamlessly integrate React Query Forge into your React projects with minimal setup.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Contributing
 
-## Learn More
+Contributions are welcome! If you encounter any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request on the [GitHub repository](https://github.com/Abhishek2063/React-Query-Forge).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## License
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-### Code Splitting
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+For any inquiries or support, feel free to reach out to Abhishek Garg at [abhishekgarg2063@gmail.com](mailto:abhishekgarg2063@gmail.com).
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
