@@ -32,7 +32,8 @@ const FilterGroup = ({ query,
      allowedRemoveGroupForge,
      fields,
      rules,
-      level = 0
+      level = 0,
+      ...props
     }) => {
 
     const colorIndex = level % colorCodes.length; // Calculate the index based on the level and array length
@@ -188,7 +189,8 @@ const FilterGroup = ({ query,
     setQuery={setQuery}
     targetData={rule}
   />
-  <button
+  {props.children}
+{allowedRemoveForge &&  <button
     style={{
       padding: '0.5rem 1rem',
       fontSize: '1rem',
@@ -201,8 +203,8 @@ const FilterGroup = ({ query,
     onClick={() => handleRemove(rule)}
   >
     Remove Rule
-  </button>
-  <button
+  </button>}
+{allowedDuplicateForge &&  <button
     style={{
       padding: '0.5rem 1rem',
       fontSize: '1rem',
@@ -215,7 +217,7 @@ const FilterGroup = ({ query,
     onClick={() => handleDuplicate(rule)}
   >
     Add Duplicate
-  </button>
+  </button>}
 </div>
 }
 
@@ -246,7 +248,7 @@ const FilterGroup = ({ query,
                 </div>
             ))}
            <div className="flex justify-start mt-4">
-    <button 
+{allowedAddNewForge &&    <button 
         style={{
             padding: '0.5rem 1rem',
             fontSize: '1rem',
@@ -260,8 +262,8 @@ const FilterGroup = ({ query,
         onClick={() => handleAddRule(rules, fields)}
     >
         Add New Rule
-    </button>
-    <button 
+    </button>}
+{allowedAddGroupForge &&    <button 
         style={{
             padding: '0.5rem 1rem',
             fontSize: '1rem',
@@ -275,8 +277,8 @@ const FilterGroup = ({ query,
         onClick={() => handleAddGroup(rules)}
     >
         Add Group
-    </button>
-    <button 
+    </button>}
+{allowedRemoveGroupForge && level === 0 &&    <button 
         style={{
             padding: '0.5rem 1rem',
             fontSize: '1rem',
@@ -289,7 +291,7 @@ const FilterGroup = ({ query,
         onClick={() => handleRemoveGroup(rules)}
     >
         Remove Group
-    </button>
+    </button>}
 </div>
 
         </div>

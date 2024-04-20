@@ -55,7 +55,8 @@ const App = () => {
       allowedAddGroupForge = {true}
       allowedRemoveGroupForge = {true}
       fields={fields}
-      />
+      >
+        </QueryBuilder>
     </div>
   )
 }

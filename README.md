@@ -8,7 +8,7 @@ React Query Forge is a powerful package developed by Abhishek Garg that simplifi
 To install React Query Forge, simply use npm:
 
 ```bash
-npm install @abhishek2063/react-query-forge
+npm install react-query-forge
 ```
 
 ## Usage

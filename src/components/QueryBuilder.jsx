@@ -24,7 +24,10 @@ const QueryBuilder = (props) => {
         allowedRemoveGroupForge={props.allowedRemoveGroupForge || true}
         fields={props.fields}
         rules = {props.state}
-      />
+        {...props}
+      >
+
+        </FilterGroup>
         </div>
     </div>
   );

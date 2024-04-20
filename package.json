@@ -1,7 +1,21 @@
 {
   "name": "react_query_forge",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "React Query Forge is a powerful package developed by Abhishek Garg that simplifies the process of building complex nested queries in React applications. Similar to a React query builder, React Query Forge excels in handling nested grouping with ease, presenting data in a tree-like structure for enhanced clarity and flexibility.",
+  "main": "src/components/QueryBuilder.jsx",
+  "private": false,
+   "keywords" : [
+    "React",
+    "Query",
+    "Forge",
+    "React Query Forge",
+    "Query Builder",
+    "Nested Queries",
+    "React Component"
+   ],
+  
+  "author": "Abhishek Garg",
+  "license": "MIT",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -17,7 +31,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepublishOnly": "npm run build"
   },
   "eslintConfig": {
     "extends": [
@@ -36,5 +51,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   }
 }
