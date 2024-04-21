@@ -2,15 +2,13 @@ import React from 'react';
 import FilterGroup from '../utils/FilterGroup';
 
 const QueryBuilder = (props) => {
-  const filterGroupStyle = {
-    border: '1px solid #ccc',
-    backgroundColor: '#f5f5f5',
-    padding: '10px',
-    marginBottom: '20px',
-  };
+
 
   return (
-    <div style={filterGroupStyle}>
+    <div style={{ border: '1px solid #ccc',
+    backgroundColor: '#f5f5f5',
+    padding: '10px',
+    marginBottom: '20px'}}>
       <h2 style={{ marginBottom: '10px' }}>Filter Group</h2>
       
       <div style={{ border: "1px solid #ccc",backgroundColor : "#f5f5f5"}}>

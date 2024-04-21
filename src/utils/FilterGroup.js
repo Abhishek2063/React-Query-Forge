@@ -278,7 +278,7 @@ const FilterGroup = ({ query,
     >
         Add Group
     </button>}
-{allowedRemoveGroupForge && level === 0 &&    <button 
+{allowedRemoveGroupForge && level !== 0 &&    <button 
         style={{
             padding: '0.5rem 1rem',
             fontSize: '1rem',
